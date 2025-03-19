@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON API</title>
+</head>
+<body>
+    <!-- <h1>title = **title**</h1>
+    <h1>price = **price**</h1>
+    <h1>rating = **rating**</h1>
+    <h1>description = **description**</h1>
+    <h1>category = **category**</h1>
+    <h1>brand = **brand**</h1> -->
+
+   
+    <script>
+        function data() {
+    fetch('/data.json')
+        .then(res => res.json())
+        .then(data => {
+            let myres = ``;
+            if (Array.isArray(data.products)) {
+                data.products.map(p => {
+                    // console.log(p);  
+                    myres += `
+                    <tr>
+                        <td>${p.title}</td>
+                    </tr>
+                    
+                    `;
+                })
+                document.getElementById('result').innerHTML = myres
+            }})}
+    </script>
+
+
+</body>
+</html>
